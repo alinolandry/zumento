@@ -1,0 +1,27 @@
+{
+    "name": "zumento/module-order-export",
+    "description": "Zumeoto Export Order module help you to export all your magento order to an ERP System",
+    "type": "magento2-module",
+    "authors": [
+        {
+            "name": "Alain Landry Noutchomwo",
+            "email": "alinolandry@gmail.com",
+            "alias": "Zumento"
+        }
+    ],
+    "license": "GPL-3.0",
+    "version": "1.0.0",
+    "require": {
+        "php": "~7.3.0||~7.4.0",
+        "magento/module-sales": "103.0.*"
+    },
+    "autoload": {
+        "files": [
+            "registration.php"
+        ],
+        "psr-4": {
+            "Zumento\\OrderExport\\": ""
+        }
+    }
+}
+
