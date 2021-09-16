@@ -3,9 +3,7 @@
     <acl>
         <resources>
             <resource id="Magento_Backend::admin">
-                <resource id="Magento_Catalog::Sales">
-                    <resource id="Zumento_OrderExport::OrderExport" title="Zumento Order Export" translate="title" sortOrder="170" />
-                </resource>
+                <resource id="Zumento_OrderExport::OrderExport" title="Zumento Order Export" translate="title" sortOrder="170" />
             </resource>
         </resources>
     </acl>
