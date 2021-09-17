@@ -6,6 +6,7 @@ use Magento\Backend\App\Action;
 use Magento\Backend\App\Action\Context;
 use Magento\Framework\Controller\Result\JsonFactory;
 use Zumento\OrderExport\Model\HeaderDataFactory;
+use Zumento\OrderExport\Orchestrator;
 
 
 class Run extends Action
@@ -26,14 +27,18 @@ class Run extends Action
      * @var HeaderDataFactory
      */
     private $headerDataFactory;
+    private Orchestrator $orchestrator;
 
     public function __construct(JsonFactory $jsonFactory,
                                  Context $context,
+                                 Orchestrator $orchestrator,
                                  HeaderDataFactory $headerDataFactory
      ) {
-         parent::__construct($context);
          $this->jsonFactory = $jsonFactory;
          $this->headerDataFactory = $headerDataFactory;
+         $this->orchestrator = $orchestrator;
+
+        parent::__construct($context);
     }
 
     public function execute()
@@ -41,6 +46,11 @@ class Run extends Action
         $headerData = $this->headerDataFactory->create();
         $headerData->setShipDate(new \DateTime($this->getRequest()->getParam("ship_date")));
         $headerData->setMerchantNotes(htmlspecialchars($this->getRequest()->getParam("merchant_notes")));
+
+        $this->orchestrator->run(
+            $this->getRequest()->getParam('order_id'),
+            $headerData
+        );
 
         return $this->jsonFactory->create([]);
     }
