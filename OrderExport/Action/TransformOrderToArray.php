@@ -9,7 +9,7 @@ declare(strict_types=1);
 namespace Zumento\OrderExport\Action;
 
 use Magento\Sales\Api\OrderRepositoryInterface;
-use Zumento\Api\DataCollectorInterface;
+use Zumento\OrderExport\Api\DataCollectorInterface;
 use Zumento\OrderExport\Model\HeaderData;
 
 class TransformOrderToArray

@@ -3,7 +3,17 @@
     <type name="Zumento\OrderExport\Action\TransformOrderToArray">
         <arguments>
             <argument name="dataCollectors" xsi:type="array">
-                <item name="header_data" xsi:type="object"></item>
+                <item name="header_data" xsi:type="object">Zumento\OrderExport\Collector\HeaderData</item>
+                <item name="item_data" xsi:type="object">Zumento\OrderExport\Collector\ItemData</item>
+            </argument>
+        </arguments>
+    </type>
+
+    <type name="Zumento\OrderExport\Collector\ItemData">
+        <arguments>
+            <argument name="allowedProductTypes" xsi:type="array">
+                <item name="simple" xsi:type="const">Magento\Catalog\Model\Product\Type::TYPE_SIMPLE</item>
+                <item name="virtual" xsi:type="const">Magento\Catalog\Model\Product\Type::TYPE_VIRTUAL</item>
             </argument>
         </arguments>
     </type>

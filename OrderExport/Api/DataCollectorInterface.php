@@ -6,7 +6,7 @@ declare(strict_types=1);
  * @Email alinolandry@gmail.com
  */
 
-namespace Zumento\Api;
+namespace Zumento\OrderExport\Api;
 
 use Magento\Sales\Api\Data\OrderInterface;
 use Zumento\OrderExport\Model\HeaderData;
