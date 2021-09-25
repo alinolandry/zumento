@@ -1,0 +1,23 @@
+<?php
+declare(strict_types=1);
+/**
+ * @by Alain Landry Noutchomwo
+ * @alias Zumento
+ */
+namespace Zumento\OrderExport\Model\ResourceModel;
+
+use Magento\Framework\Model\ResourceModel\Db\AbstractDb;
+
+class OrderExportDetails extends AbstractDb
+{
+
+    /**
+     * Resource initialization
+     *
+     * @return void
+     */
+    protected function _construct()
+    {
+        $this->_init('sales_order_export', 'id');
+    }
+}
