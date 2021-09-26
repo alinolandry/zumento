@@ -17,4 +17,22 @@
             </argument>
         </arguments>
     </type>
+
+    <preference for="Zumento\OrderExport\Api\Data\OrderExportDetailsSearchResultInterface"
+                type="Magento\Framework\Api\SearchResults" />
+
+    <virtualType name="Zumento\OrderExport\Model\Api\SearchCriteria\OrderExportDetailsCollectionProcessor" type="Magento\Framework\Api\SearchCriteria\CollectionProcessor">
+        <arguments>
+            <argument name="processors" xsi:type="array">
+                <item name="filters" xsi:type="object">Magento\Framework\Api\SearchCriteria\CollectionProcessor\FilterProcessor</item>
+                <item name="sorting" xsi:type="object">Magento\Framework\Api\SearchCriteria\CollectionProcessor\SortingProcessor</item>
+                <item name="pagination" xsi:type="object">Magento\Framework\Api\SearchCriteria\CollectionProcessor\PaginationProcessor</item>
+            </argument>
+        </arguments>
+    </virtualType>
+    <type name="Zumento\OrderExport\Model\OrderExportDetailsRepository">
+        <arguments>
+            <argument name="collectionProcessor" xsi:type="object">Zumento\OrderExport\Model\Api\SearchCriteria\OrderExportDetailsCollectionProcessor</argument>
+        </arguments>
+    </type>
 </config>
