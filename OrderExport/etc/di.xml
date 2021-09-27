@@ -35,4 +35,7 @@
             <argument name="collectionProcessor" xsi:type="object">Zumento\OrderExport\Model\Api\SearchCriteria\OrderExportDetailsCollectionProcessor</argument>
         </arguments>
     </type>
+    <type name="Magento\Sales\Api\OrderRepositoryInterface">
+        <plugin name="LoadExportDetailsIntoOrder" type="Zumento\OrderExport\Plugin\LoadExportDetailsIntoOrder" />
+    </type>
 </config>
