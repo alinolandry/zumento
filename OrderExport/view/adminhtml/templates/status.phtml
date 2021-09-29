@@ -1,17 +1,16 @@
 <?php
 declare(strict_types=1);
 /**
- * @by Alain Landry Noutchomwo
+ * @author Alain Landry Noutchomwo
  * @alias Zumento
  **/
 
 /** @var $block \Magento\Framework\View\Element\Template */
 /** @var $view \Zumento\OrderExport\ViewModel\HasBeenExported */
-$view = $block->getData('details');
+$view = $block->getData('hasbeenexported');
 ?>
 
-<? /*php if ($view->hasBeenExported()): ?>
-    <section class="order-export-status admin__page-section">
-        <h3><?= __('Order was exported') ?></h3>
-    </section>
-<?php endif; */?>
+
+<section class="order-export-status admin__page-section">
+    <h3><?= $view->getExportedMessage() ?></h3>
+</section>

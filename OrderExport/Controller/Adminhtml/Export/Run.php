@@ -33,12 +33,17 @@ class Run extends Action
      * @var HeaderDataFactory
      */
     private $headerDataFactory;
-    private Orchestrator $orchestrator;
 
-    public function __construct(JsonFactory $jsonFactory,
-                                 Context $context,
-                                 Orchestrator $orchestrator,
-                                 HeaderDataFactory $headerDataFactory
+    /**
+     * @var Orchestrator
+     */
+    private $orchestrator;
+
+    public function __construct(
+        JsonFactory $jsonFactory,
+        Context $context,
+        Orchestrator $orchestrator,
+        HeaderDataFactory $headerDataFactory
      ) {
          $this->jsonFactory = $jsonFactory;
          $this->headerDataFactory = $headerDataFactory;

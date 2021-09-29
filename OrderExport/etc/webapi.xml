@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<!--
+  ~ @By Alain Landry Noutchomwo
+  ~ @Alias Zumento
+  ~ @Email alinolandry@gmail.com
+  ~
+  -->
+<routes xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Webapi:etc/webapi.xsd">
+    <route url="/V1/order/export/:orderId" method="POST">
+        <service class="Zumento\OrderExport\Api\ExportInterface" method="execute"/>
+        <resources>
+            <resource ref="Zumento_OrderExport::OrderExport"/>
+        </resources>
+    </route>
+</routes>
