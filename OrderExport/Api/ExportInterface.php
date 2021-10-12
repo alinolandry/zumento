@@ -14,9 +14,9 @@ interface ExportInterface
 {
     /**
      * @param int $orderId
-     * @param IncomingHeaderDataInterface $headerData
+     * @param IncomingHeaderDataInterface $incomingHeaderData
      * @return ResponseDataInterface
      */
-    public function execute(int $orderId, IncomingHeaderDataInterface $headerData): ResponseDataInterface;
+    public function execute(int $orderId, IncomingHeaderDataInterface $incomingHeaderData): ResponseDataInterface;
 
 }

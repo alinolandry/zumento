@@ -59,7 +59,7 @@ class Run extends Action
         $headerData->setMerchantNotes(htmlspecialchars($this->getRequest()->getParam("merchant_notes")));
 
         $this->orchestrator->run(
-            $this->getRequest()->getParam('order_id'),
+            (int)$this->getRequest()->getParam('order_id'),
             $headerData
         );
 

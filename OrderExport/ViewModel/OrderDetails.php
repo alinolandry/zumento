@@ -7,57 +7,41 @@ declare(strict_types=1);
  */
 
 namespace Zumento\OrderExport\ViewModel;
-
-use Magento\Framework\App\Config\ScopeConfigInterface;
 use Magento\Framework\App\RequestInterface;
 use Magento\Framework\AuthorizationInterface;
 use Magento\Framework\Data\Form\FormKey;
 use Magento\Framework\UrlInterface;
 use Magento\Framework\View\Element\Block\ArgumentInterface;
 
-/**
- * This class help to export details of Order
- */
 class OrderDetails implements ArgumentInterface
 {
-    /**
-     * @var ScopeConfigInterface
-     */
-    private $scopeConfig;
-
-    private $formKey;
-
-    private $urlBuilder;
-
-    private $request;
-
-    //private $authorization;
+    /** @var AuthorizationInterface */
     private $authorization;
 
-    /**
-     * @param ScopeConfigInterface $scopeConfig
-     */
-    public function __construct( ScopeConfigInterface $scopeConfig,
-                                  FormKey $formKey,
-                                  UrlInterface $urlBuilder,
-                                  RequestInterface $request,
-                                AuthorizationInterface $authorization
-    )
-    {
-        $this->scopeConfig = $scopeConfig;
-        $this->formKey = $formKey;
-        $this->urlBuilder = $urlBuilder;
-        $this->request = $request;
+    /** @var UrlInterface */
+    private $urlBuilder;
+
+    /** @var FormKey */
+    private $formKey;
+
+    /** @var RequestInterface */
+    private $request;
+
+    public function __construct(
+        AuthorizationInterface $authorization,
+        UrlInterface $urlBuilder,
+        FormKey $formKey,
+        RequestInterface $request
+    ) {
         $this->authorization = $authorization;
+        $this->urlBuilder = $urlBuilder;
+        $this->formKey = $formKey;
+        $this->request = $request;
     }
 
-    /**
-     * @return bool
-     */
     public function isAllowed(): bool
     {
-
-        return $this->scopeConfig->isSetFlag("sales/order_export/enabled") && $this->authorization->isAllowed('Zumento_OrderExport::OrderExport');
+        return $this->authorization->isAllowed('SwiftOtter_OrderExport::OrderExport');
     }
 
     public function getButtonMessage(): string
@@ -70,13 +54,13 @@ class OrderDetails implements ArgumentInterface
         return [
             'sending_message' => __('Sending...'),
             'original_message' => $this->getButtonMessage(),
-            'form_key' => $this->formKey->getFormKey(),
             'upload_url' => $this->urlBuilder->getUrl(
                 'order_export/export/run',
                 [
                     'order_id' => (int)$this->request->getParam('order_id')
                 ]
-            )
+            ),
+            'form_key' => $this->formKey->getFormKey()
         ];
     }
 }

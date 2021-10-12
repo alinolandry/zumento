@@ -43,7 +43,7 @@ class ItemData implements DataCollectorInterface
 
         $items = array_filter($items, function (OrderInterface $orderItem) {
             return in_array(
-                $this->getProductTypeFor($orderItem->getProductId()),
+                $this->getProductTypeFor((int)$orderItem->getProductId()),
                 $this->allowedProductTypes
             );
         });

@@ -38,4 +38,17 @@
     <type name="Magento\Sales\Api\OrderRepositoryInterface">
         <plugin name="LoadExportDetailsIntoOrder" type="Zumento\OrderExport\Plugin\LoadExportDetailsIntoOrder" />
     </type>
+
+
+    <type name="SwiftOtter\OrderExport\ViewModel\OrderDetails">
+        <plugin name="InjectAdminToken" type="Zumento\OrderExport\Plugin\InjectAdminToken" />
+    </type>
+
+    <preference for="Zumento\OrderExport\Api\Data\IncomingHeaderDataInterface"
+                type="Zumento\OrderExport\Model\IncomingHeaderData" />
+
+    <preference for="Zumento\OrderExport\Api\ExportInterface"
+                type="Zumento\OrderExport\Model\Endpoint\Export" />
+
+    <preference for="Zumento\OrderExport\Api\Data\ResponseDataInterface" type="Zumento\OrderExport\Model\ResponseDetails"/>
 </config>

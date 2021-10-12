@@ -41,7 +41,7 @@ class Orchestrator
     /**
      * @var SaveExportDetailsToOrder
      */
-    private SaveExportDetailsToOrder $saveExportDetailsToOrder;
+    private $saveExportDetailsToOrder;
 
     /**
      * @param RequestValidator $requestValidator
@@ -67,8 +67,8 @@ class Orchestrator
     {
         $results = ['success' => false, 'error' => null];
 
-        if (!$this->requestValidator->isValid($orderId)) {
-            $results['error'] = (string)__('The order ID provided was invalid');
+        if (!$this->requestValidator->validate($orderId, $headerData)) {
+            $results['error'] = (string)__('Invalid order specified.');
             return $results;
         }
 
