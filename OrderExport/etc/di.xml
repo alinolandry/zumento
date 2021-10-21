@@ -11,8 +11,8 @@
 
     <type name="Zumento\OrderExport\Collector\ItemData">
         <arguments>
-            <argument name="allowedProductTypes" xsi:type="array">
-                <item name="simple" xsi:type="const">Magento\Catalog\Model\Product\Type::TYPE_SIMPLE</item>
+            <argument name="allowedTypes" xsi:type="array">
+                <item name="simple" xsi:type="const">Magento\Catalog\Model\Product\Type::DEFAULT_TYPE</item>
                 <item name="virtual" xsi:type="const">Magento\Catalog\Model\Product\Type::TYPE_VIRTUAL</item>
             </argument>
         </arguments>

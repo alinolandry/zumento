@@ -9,12 +9,12 @@ declare(strict_types=1);
 namespace Zumento\OrderExport;
 
 use Magento\Framework\Exception\NoSuchEntityException;
-use Magento\Webapi\Controller\Rest\RequestValidator;
 use Psr\Log\LoggerInterface;
 use Zumento\OrderExport\Action\PushDetailsToWebservice;
 use Zumento\OrderExport\Action\SaveExportDetailsToOrder;
 use Zumento\OrderExport\Action\TransformOrderToArray;
 use Zumento\OrderExport\Model\HeaderData;
+use Zumento\OrderExport\Model\RequestValidator;
 
 class Orchestrator
 {
