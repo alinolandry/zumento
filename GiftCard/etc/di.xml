@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<!--
+  ~ @By Alain Landry Noutchomwo
+  ~ @Alias Zumento
+  ~ @Email alinolandry@gmail.com
+  ~
+  -->
+
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+
+    <preference for="Zumento\GiftCard\Api\Data\GiftCardInterface" type="Zumento\GiftCard\Model\GiftCard" />
+    <preference for="Zumento\GiftCard\Api\Data\GiftCardUsageInterface" type="Zumento\GiftCard\Model\GiftCardUsage" />
+
+    <preference for="Zumento\GiftCard\Api\Data\GiftCardSearchResultsInterface"
+                type="Magento\Framework\Api\SearchResults" />
+
+</config>
