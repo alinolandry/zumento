@@ -14,4 +14,11 @@
     <preference for="Zumento\GiftCard\Api\Data\GiftCardSearchResultsInterface"
                 type="Magento\Framework\Api\SearchResults" />
 
+    <virtualType name="Zumento\GiftCard\Model\ResourceModel\Product\Indexer\Price\GiftCardProductPrice"
+                 type="Magento\Catalog\Model\ResourceModel\Product\Indexer\Price\SimpleProductPrice">
+        <arguments>
+            <argument name="productType" xsi:type="const">Zumento\GiftCard\Model\Type\GiftCard::TYPE_CODE</argument>
+        </arguments>
+    </virtualType>
+
 </config>
