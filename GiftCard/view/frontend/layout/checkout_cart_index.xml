@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<!--
+  ~ @By Alain Landry Noutchomwo
+  ~ @Alias Zumento
+  ~ @Email alinolandry@gmail.com
+  ~
+  -->
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+        <referenceBlock name="checkout.cart.form">
+            <arguments>
+                <argument name="overridden_templates" xsi:type="array">
+                    <item name="zumento_giftcard" xsi:type="string">Zumento_GiftCard::cart/item/giftcard.phtml</item>
+                </argument>
+            </arguments>
+        </referenceBlock>
+
+        <referenceBlock name="checkout.cart.item.renderers.default">
+            <arguments>
+                <argument name="cart_item_details" xsi:type="object">Zumento\GiftCard\ViewModel\CartDetails</argument>
+            </arguments>
+        </referenceBlock>
+    </body>
+</page>

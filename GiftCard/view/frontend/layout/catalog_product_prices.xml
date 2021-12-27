@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<!--
+  ~ @By Alain Landry Noutchomwo
+  ~ @Alias Zumento
+  ~ @Email alinolandry@gmail.com
+  ~
+  -->
+<layout xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/layout_generic.xsd">
+    <referenceBlock name="render.product.prices">
+        <arguments>
+            <argument name="zumento_giftcard" xsi:type="array">
+                <item name="prices" xsi:type="array">
+                    <item name="final_price" xsi:type="array">
+                        <item name="render_template" xsi:type="string">Zumento_GiftCard::product/price/final_price.phtml</item>
+                    </item>
+                </item>
+            </argument>
+        </arguments>
+    </referenceBlock>
+</layout>

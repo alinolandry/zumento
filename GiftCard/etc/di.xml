@@ -21,4 +21,15 @@
         </arguments>
     </virtualType>
 
+    <!--type name="Magento\InventorySales\Model\IsProductSalableForRequestedQtyCondition\IsProductSalableForRequestedQtyConditionChain">
+        <plugin name="PreventInventoryForZumentoGiftcard" type="Zumento\GiftCard\Plugin\PreventInventoryForZumentoGiftcard" />
+    </type>
+
+    <type name="Magento\CatalogInventory\Model\Quote\Item\QuantityValidator">
+        <plugin name="PreventQuantityLookupForGiftCard" type="Zumento\GiftCard\Plugin\PreventQuantityLookupForGiftCard" />
+    </type-->
+
+    <type name="Magento\Quote\Model\Quote\Item\ToOrderItem">
+        <plugin name="MoveQuoteItemOptionsToOrderItem" type="Zumento\GiftCard\Plugin\MoveQuoteItemOptionsToOrderItem" />
+    </type>
 </config>

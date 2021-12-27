@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<!--
+  ~ @By Alain Landry Noutchomwo
+  ~ @Alias Zumento
+  ~ @Email alinolandry@gmail.com
+  ~
+  -->
+<page layout="1column" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+        <referenceContainer name="product.info.form.content">
+            <block name="zumento.giftcard.details"
+                   template="Zumento_GiftCard::details.phtml"
+                   before="product.info.addtocart">
+                <arguments>
+                    <argument name="details" xsi:type="object">Zumento\GiftCard\ViewModel\FrontendDetails</argument>
+                </arguments>
+            </block>
+
+        </referenceContainer>
+    </body>
+</page>
