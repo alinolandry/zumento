@@ -9,4 +9,8 @@
     <event name="sales_quote_collect_totals_before">
         <observer name="SetGiftCardCustomPrice" instance="Zumento\GiftCard\Observer\SetGiftCardCustomPrice" />
     </event>
+
+    <event name="sales_order_invoice_register">
+        <observer name="RegisterGiftCard" instance="Zumento\GiftCard\Observer\RegisterGiftCard" />
+    </event>
 </config>
